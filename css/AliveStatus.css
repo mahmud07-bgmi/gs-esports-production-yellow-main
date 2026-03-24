@@ -189,8 +189,6 @@ body, .table-alive, .alive-rectangles, .table-alive th, .table-alive td {
   border: 1px solid #ffb347;
 
   box-shadow: 0 0 6px rgba(255, 200, 0, 0.6);
-
-  animation: barPop 0.3s ease;
 }
 
 @keyframes barPop {
