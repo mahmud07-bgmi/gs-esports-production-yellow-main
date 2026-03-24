@@ -112,7 +112,7 @@ body, .table-alive, .alive-rectangles, .table-alive th, .table-alive td {
 }
 
 /* 🔥 row entry animation */
-.table-alive tbody tr {
+.table-alive tbody tr.animate-row {
   animation: fadeRow 0.5s ease forwards;
 }
 
