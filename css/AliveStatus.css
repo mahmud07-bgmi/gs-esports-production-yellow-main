@@ -23,8 +23,14 @@ body, .table-alive, .alive-rectangles, .table-alive th, .table-alive td {
 }
 
 .table-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* animation alag class me */
+.table-container.slide-in {
   animation: slideInRight 0.8s ease forwards;
-  animation-iteration-count: 1;
 }
 
 /* ================= MAIN TABLE ================= */
