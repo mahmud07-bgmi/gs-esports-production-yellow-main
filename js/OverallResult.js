@@ -121,7 +121,7 @@ function updateData() {
     }
   };
   
-  script.onerror = () {
+ script.onerror = function() {
     console.error('Error loading Google Sheets data');
     if (script.parentNode) {
       document.head.removeChild(script);
