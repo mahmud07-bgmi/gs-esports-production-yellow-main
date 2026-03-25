@@ -13,174 +13,135 @@
   src: url('../font/Microgramma D Extended Bold.otf') format('opentype');
 }
 
-/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY */
 body {
-  width: 100vw;   /* FIXED */
-  height: 100vh;  /* FIXED */
+  width: 1920px;
+  height: 1080px;
   overflow: hidden;
   font-family: 'D-DINCondensed', sans-serif;
-  position: relative;
-
-  background: linear-gradient(180deg, #6b0000 0%, #ff7a00 100%);
-}
-
-/* GLOW EFFECT */
-body::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background:
-    radial-gradient(circle at 50% 20%, rgba(255,180,0,0.6), transparent 60%),
-    radial-gradient(circle at 20% 80%, rgba(255,100,0,0.4), transparent 60%),
-    radial-gradient(circle at 80% 70%, rgba(255,0,0,0.3), transparent 60%);
-  z-index: 0;
-}
-
-/* CURVE */
-body::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 260px;
-  background: linear-gradient(180deg, #ff6a00, #ff2d00);
-  border-top-left-radius: 70% 100%;
-  border-top-right-radius: 70% 100%;
-  z-index: 0;
-}
-
-/* CONTAINER */
-.container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a1f14 50%, #1a1410 100%);
 }
 
 /* HEADER */
 .header {
   text-align: center;
-  padding-top: 40px;
+  padding: 40px 0;
 }
 
 .header h1 {
   font-family: 'AmericanCaptain';
-  font-size: 120px;
+  font-size: 7rem;
   letter-spacing: 12px;
-  text-transform: uppercase;
-  color: #ffb300;
-  text-shadow: 0 5px 15px rgba(0,0,0,0.7);
+  background: linear-gradient(90deg, #FF6B00, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* MAIN */
+/* LAYOUT */
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .main-content {
   flex: 1;
   display: flex;
+  padding: 0 50px 40px;
   gap: 30px;
-  padding: 40px;
 }
 
-/* SIDES FIXED */
-.left-side {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.right-side {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-}
-
-/* FIRST PLACE */
-.first-place-block {
-  width: 100%;
-  background: linear-gradient(135deg, #8b0000, #3b0000);
-  border: 3px solid #ffb300;
-  padding: 20px;
-}
-
-.first-place-team-name {
-  font-size: 36px;
-  font-weight: bold;
-  color: white;
-}
-
-/* TABLE BLOCK */
-.second-block,
-.third-block {
-  width: 100%;
+.left-side, .right-side {
   flex: 1;
   display: flex;
-  background: linear-gradient(135deg, #7a0000, #2a0000);
-  border: 2px solid #ff6a00;
-  overflow: hidden;
+  flex-direction: column;
 }
 
 /* TABLE */
 table {
   width: 100%;
-  height: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
-/* HEADER */
 thead th {
-  background: #ff6a00;
+  background: linear-gradient(180deg, #FF8C00, #FF6B00);
   color: white;
-  font-size: 18px;
-  padding: 10px;
-}
-
-/* ROWS */
-tbody tr {
-  background: #5a0000;
-  height: 60px; /* FIX */
-}
-
-tbody tr:nth-child(even) {
-  background: #6a0000;
-}
-
-/* CELLS */
-tbody td {
   padding: 12px;
-  text-align: center;
-  color: white;
+  font-weight: 900;
+  text-transform: uppercase;
   font-size: 18px;
 }
 
-/* TEAM */
+tbody td {
+  padding: 0 12px; /* 🔥 IMPORTANT FIX */
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px;
+  color: #E8E8E8;
+  height: 52px; /* 🔥 FIX ROW HEIGHT */
+}
+
+tbody tr {
+  background: rgba(25, 22, 20, 0.9);
+  transition: 0.2s;
+}
+
+tbody tr:hover {
+  background: rgba(255, 107, 0, 0.2);
+}
+
+/* TEAM COLUMN */
+.team-col {
+  padding: 0 12px !important;
+  vertical-align: middle;
+}
+
+/* 🔥 TEAM CELL (MAIN FIX) */
 .team-cell {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 10px;
+  height: 100%;
+  width: 100%;
 }
 
+/* 🔥 LOGO FIX */
 .team-cell img {
-  height: 25px;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+  border: 2px solid rgba(255, 140, 0, 0.6);
+}
+
+/* TEAM NAME */
+.team-name {
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 /* POINTS */
 .total-points {
-  color: #ffb300;
-  font-weight: bold;
+  font-weight: 900;
+  color: #FFA500;
 }
 
 /* RANK */
 .rank {
-  color: #ffb300;
-  font-weight: bold;
+  font-weight: 900;
+}
+
+/* WWCD ICON */
+.wwcd-icon {
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
 }
