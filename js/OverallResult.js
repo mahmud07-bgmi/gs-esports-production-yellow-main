@@ -49,7 +49,7 @@ function updateData() {
         });
 
         // Check if we should show results (use first row's show_result value)
-       const shouldShowResults = true;
+        const shouldShowResults = rows.length > 0 && (rows[0].show_result === true || rows[0].show_result === 'TRUE' || rows[0].show_result === 'true');
         
         console.log('Show results:', shouldShowResults);
 
